@@ -1,0 +1,8 @@
+/*C3*/SET SCHEMA PUBLIC
+CREATE TABLE IF NOT EXISTS doctor( id BIGINT primary key identity, name VARCHAR(255) not null, patronymic VARCHAR(255) not null, surname VARCHAR(255) not null, specialization VARCHAR(255) not null )
+CREATE TABLE IF NOT EXISTS patient( id BIGINT primary key identity, name VARCHAR(255) not null, patronymic VARCHAR(255) not null, surname VARCHAR(255) not null, number VARCHAR(255) not null )
+CREATE TABLE IF NOT EXISTS recipe( id BIGINT primary key identity, creation_date DATE not null, description VARCHAR(255) not null, priority INTEGER not null, validity DATE not null, doctor_id BIGINT not null, patient_id BIGINT not null, FOREIGN KEY (doctor_id) REFERENCES doctor(id), FOREIGN KEY (patient_id) REFERENCES patient(id) )
+INSERT INTO PATIENT VALUES(14,'\u0421\u0435\u0440\u0433\u0435\u0439','\u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432\u0438\u0447','\u0418\u0432\u0430\u043d\u0447\u0435\u043d\u043a\u043e','1562565')
+COMMIT
+INSERT INTO RECIPE VALUES(15,'2020-08-14','\u0441\u0440\u043e\u0447\u043d\u043e',1,'2020-08-21',31,14)
+COMMIT
