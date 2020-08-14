@@ -1,10 +1,3 @@
-# HaulmontTestTask
+# Build and Run: mvn package spring-boot:run
+
 Test task for Haulmont company
-
-Build and Run
--------------
-
-Run in the command line:
-	```
-	mvn package spring-boot:run
-	```
